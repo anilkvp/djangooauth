@@ -1,5 +1,6 @@
+*.pyc
 .idea/
 .idea/djangooauth.iml .idea/inspectionProfiles .idea/misc.xml .idea/modules.xml .idea/workspace.xml
 .idea
 customer/migrations/*
-users/migrations/* 
+users/migrations/*

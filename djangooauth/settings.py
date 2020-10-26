@@ -87,18 +87,11 @@ REST_FRAMEWORK = {
 # --- Specify the authentication backends
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend' # To keep the Browsable API
+    'django.contrib.auth.backends.ModelBackend',
     'oauth2_provider.backends.OAuth2Backend',
 )
 
-# --- You should not have to do this, but I had some problems without it. Probably
-# --- just add it you get an error with the ALLOWED_HOSTS.
-
-ALLOWED_HOSTS = ['0.0.0.0']
-
-
 WSGI_APPLICATION = 'djangooauth.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

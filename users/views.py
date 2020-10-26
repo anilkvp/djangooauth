@@ -7,8 +7,8 @@ import requests
 from .serializers import CreateUserSerializer
 
 
-CLIENT_ID = '9999'
-CLIENT_SECRET = 'qwerty654321dfgfdhgfhgf'
+CLIENT_ID = 'd6l6PYAGiBRs1tTRHFbmcBcTMROTTRsVAMPqgVx5'
+CLIENT_SECRET = 'wKkvQGB6K2jXQ6faF116xHuLn2IKnx1mccqRwdXnMAD8qmi9F5YVHN1Du1ORdr5WonOvkqTg8C8Xhh5hlxi4WSSI4yWi32bDRM4vaKQq1kC640mfUFCtGlTv5EitFzMN'
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -25,7 +25,7 @@ def register(request):
         serializer.save()
         # Then we get a token for the created user.
         # This could be done differentley
-        r = requests.post('http://0.0.0.0:8000/o/token/',
+        r = requests.post('http://127.0.0.1:8000/o/token/',
             data={
                 'grant_type': 'password',
                 'username': request.data['username'],
@@ -47,7 +47,7 @@ def token(request):
     {"username": "username", "password": "1234abcd"}
     '''
     r = requests.post(
-    'http://0.0.0.0:8000/o/token/',
+    'http://127.0.0.1:8000/o/token/',
         data={
             'grant_type': 'password',
             'username': request.data['username'],
@@ -68,7 +68,7 @@ def refresh_token(request):
     {"refresh_token": "<token>"}
     '''
     r = requests.post(
-    'http://0.0.0.0:8000/o/token/',
+    'http://127.0.0.1:8000/o/token/',
         data={
             'grant_type': 'refresh_token',
             'refresh_token': request.data['refresh_token'],
@@ -87,7 +87,7 @@ def revoke_token(request):
     {"token": "<token>"}
     '''
     r = requests.post(
-        'http://0.0.0.0:8000/o/revoke_token/',
+        'http://127.0.0.1:8000/o/revoke_token/',
         data={
             'token': request.data['token'],
             'client_id': CLIENT_ID,
