@@ -1,5 +1,7 @@
 # djangooauth
 
+Small application having django and oauth integrated.
+
 **Set up**
 
 Run 
