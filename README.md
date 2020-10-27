@@ -1,6 +1,6 @@
 # djangooauth
 
-Small application having django and oauth integrated.
+Small application having django and oauth2 integrated.
 
 **Set up**
 
